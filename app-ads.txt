@@ -1,0 +1,8 @@
+# app-ads.txt — Authorized Digital Sellers for Apps (IAB Tech Lab)
+# https://iabtechlab.com/app-ads-txt/
+#
+# Placeholder file. Replace the example line below with your authorized
+# ad networks/resellers once advertising partnerships are in place.
+# Format: <DOMAIN>, <PUBLISHER ID>, <RELATIONSHIP>, <CERT AUTHORITY ID>
+#
+# example.com, 0000000000, DIRECT, 0000000000000000
