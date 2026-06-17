@@ -53,7 +53,6 @@
         <span>Dim Sum Games</span>
       </a>
       <nav class="flex items-center gap-6 text-sm font-bold text-slate-600">
-        <a href="#games" class="hidden transition-colors hover:text-coral sm:inline">Games</a>
         <a href="#contact" class="hidden transition-colors hover:text-coral sm:inline">Contact</a>
         <a href="https://www.linkedin.com/" target="_blank" rel="noopener"
            class="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-white transition-opacity hover:opacity-90">
@@ -79,13 +78,6 @@
       <p class="mx-auto mt-4 max-w-md text-lg font-semibold text-slate-500">
         We're an indie studio crafting fun, bite-sized mobile games — easy to pick up, hard to put down.
       </p>
-
-      <div class="mt-8 flex items-center justify-center gap-3">
-        <a href="#games"
-           class="rounded-full bg-coral px-7 py-3.5 font-display text-base font-extrabold text-white shadow-lg shadow-coral/25 transition hover:brightness-105 active:scale-95">
-          Explore our games
-        </a>
-      </div>
     </section>
 
     <!-- ===== Games ===== -->
@@ -181,10 +173,10 @@
           Want to chat, collaborate, or just say hi? We'd love to hear from you.
         </p>
         <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a href="mailto:hello@dimsumgames.com"
+          <button id="emailBtn" type="button"
              class="w-full rounded-full bg-coral px-7 py-3.5 font-display text-base font-extrabold text-white shadow-lg shadow-coral/25 transition hover:brightness-105 active:scale-95 sm:w-auto">
             Email us
-          </a>
+          </button>
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener"
              class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 font-display text-base font-extrabold text-ink transition-colors hover:bg-slate-50 sm:w-auto">
             <svg viewBox="0 0 24 24" class="h-5 w-5 text-[#0A66C2]" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.65h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.6 22 10.6 22 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H9V9Z"/></svg>
@@ -209,6 +201,19 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact email is kept out of the page source and assembled only on
+    // user interaction, so address harvesters scraping the static HTML
+    // never see it.
+    (function () {
+      var btn = document.getElementById('emailBtn');
+      if (!btn) return;
+      var open = function () {
+        var addr = window.atob('aGVsbG9AZGltc3VtZ2FtZXMuY29t');
+        window.location.href = 'mailto:' + addr;
+      };
+      btn.addEventListener('click', open);
+    })();
   </script>
 </body>
 </html>
