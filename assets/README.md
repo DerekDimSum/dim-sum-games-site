@@ -1,24 +1,20 @@
 # Site assets
 
-## Used by the site (optimized web versions)
-| Filename | What it is | Used for |
-|---|---|---|
-| `logo-icon.png` | Studio icon mark (512²) | Nav, hero, footer |
-| `favicon.png` | Studio icon (180²) | Browser tab + Apple touch icon |
-| `dsq-icon.png` | Dim Sum Queens app icon (512²) | Queens game card |
-| `ttg-icon.png` | Tiny Tactics GO! app icon (512²) | Tiny Tactics game card |
+Only web-ready files the site actually serves live here. High-res source
+originals (logos, App Store screenshots, header art) are kept in the team's
+Google Drive, not the repo.
 
-These are generated (downscaled/optimized) from the high-res source files below.
+```
+assets/
+├── logo-icon.png        # studio mark (nav, hero, footer)
+├── favicon.png          # browser / apple-touch icon
+├── dsq-icon.png         # Dim Sum Queens app icon (home card, OG)
+├── ttg-icon.png         # Tiny Tactics GO! app icon (home card, OG)
+├── og-image.png         # 1200×630 social share card
+├── dsq/web/             # Dim Sum Queens page: logo, mockups, screenshots
+└── ttg/web/             # Tiny Tactics GO! page: logo, hero, mockups, screenshots
+```
 
-## Source originals (uploaded, not served directly)
-Kept as source of truth; the site references the optimized versions above
-instead, since these are large (1–3 MB each).
-
-- `DSG avatar.png` — studio icon mark, full res → source for `logo-icon.png` / `favicon.png`
-- `DSG_Text(Verticle)Logo_Black.png` — vertical studio lockup, black text
-- `Logo1.jpg` — large studio logo (solid background)
-- `DSQ Logo.png`, `DSQ App Icon.png` — Dim Sum Queens
-- `TTG_Logo_Final.png`, `Tiny Tactics GO! App Icon.png` — Tiny Tactics GO!
-
-## Still optional
-- `og-image.png` (1200×630) — social link-preview image
+The `web/` images are downscaled/compressed from the Drive originals. To refresh
+them, re-optimize the source and drop the result into the matching `web/` folder
+using the same filename.
